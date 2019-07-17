@@ -1,0 +1,37 @@
+#navbar {
+    background-color: #222;
+    link: #FFF;
+    height: 40px;
+    font-family: Tahoma ;
+    font-size: 15px;
+    text-align: center-left;
+
+
+}
+nav a:link {
+    color:#AAA;
+    padding-left: 30px;
+}
+
+nav a:visited {
+    color:#AAA;
+}
+
+nav a:hover {
+    color:#BBB;
+}
+
+nav a:active {
+    color:#CCC;
+}
+
+#CuHead {
+    background-color: #CCCCCC;
+    height: 50px;
+    margin-top: -20px;
+
+}
+.tabs>button{
+    font-size: 20px;
+    background-color: #EEE;
+}
