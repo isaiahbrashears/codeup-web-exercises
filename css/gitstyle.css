@@ -35,3 +35,9 @@ nav a:active {
     font-size: 20px;
     background-color: #EEE;
 }
+.table {
+    padding-right: 200px;
+}
+.link-space{
+    padding-right: 100px;
+}
