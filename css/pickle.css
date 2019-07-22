@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+
+body{
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar{
+    height: 1000px;
+    width: 200px;
+    background-color: black;
+    text-align: center;
+}
+
+.puppy{
+    margin-top: 8px;
+    margin-left: 5px;
+}
+
+li{
+    padding: 10px;
+    text-align: right;
+    padding-right: 18px;
+    font-family: "Courier New";
+    background-color: gray;
+    border: 2px solid black ;
+
+}
+a:link{
+    color: black;
+}  button{
+       width: 100%;
+}
