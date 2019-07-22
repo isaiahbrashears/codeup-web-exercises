@@ -59,14 +59,17 @@ a {
     position: absolute;
     top: 245px;
 }
-.profile-details{
-    width: calc(25% - 1em);
-    float: left;
-    margin: 0  .5em;
-}
+
 .profile-form{
     float: right;
     line-height: 80px;
+}
+.profile-entry{
+    margin: .5em;
+}
+.profile-items{
+    padding: 0;
+    list-style: none;
 }
 .btn {
     border: 1px solid var(--main-link-color);
@@ -89,6 +92,11 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+.profile-details{
+    width: calc(25% - 1em);
+    float: left;
+    margin: 0  .5em;
 }
 .timeline{
     width: calc(50% - 1em);
@@ -118,12 +126,7 @@ a {
 }
 .media-body{
     float: left;
-    width: calc(100% - 6em);
+    width: calc(100% - 50px);
 }
-.profile-items{
-    padding: 0;
-    list-style: none;
-}
-.profile-entry{
-    margin: .5em;
-}
+
+
