@@ -101,8 +101,8 @@ a {
 
 .media{
     width: 100%;
-    background-color: white;
-    border-bottom: 1px solid darkgrey;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
     padding: .5em;
     overflow: auto;
 }
