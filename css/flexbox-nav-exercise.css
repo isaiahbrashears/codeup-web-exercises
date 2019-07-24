@@ -39,21 +39,23 @@ nav a:hover {
     color: darkblue;
 }
 
-.logo{
+.logo {
     font-size: 3em;
     padding: .2em 0;
     font-family: 'Montserrat', sans-serif;
     margin: 0 auto;
-
-
-}
-.logo:hover{
-    color: black;
-
+    position: absolute;
+    left: calc(50% + (-60.5px));
 }
 
-body{
-    text-align: center;
+.linkright{
+    margin-left: auto;
 }
+
+
+
+
+
+
 
 
