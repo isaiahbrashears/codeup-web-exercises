@@ -16,11 +16,11 @@ body {
     grid-template-columns: 1fr 400px 400px 400px 1fr;
     grid-gap: 1em;
     height: 100vh;
-    /* TO DO: make the wrapper a grid container */
-    /* TO DO: define five columns where the middle three columns are 400px and the outer columns fill the remaining space */
-    /* TO DO: add a gap of 1em around all grid items */
+    /* TODO: make the wrapper a grid container */
+    /* TODO: define five columns where the middle three columns are 400px and the outer columns fill the remaining space */
+    /* TODO: add a gap of 1em around all grid items */
     /* no row properties are needed */
-    /* TO DO: the height of the wrapper should be 100 viewport height units */
+    /* TODO: the height of the wrapper should be 100 viewport height units */
 }
 
 ul {

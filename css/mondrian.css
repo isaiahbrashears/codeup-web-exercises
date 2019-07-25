@@ -7,8 +7,8 @@ main {
     border-radius: 10px;
     height: 500px;
     width: 500px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-gap: .4em;
     background-color: black;
     padding: .4em;
