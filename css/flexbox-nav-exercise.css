@@ -9,7 +9,7 @@ nav {
     height: 4.25em;
     display: flex;
 }
-ul {
+nav ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -17,15 +17,14 @@ ul {
     height: 100%;
     width: 100%;
     margin: 0 auto;
-
-
 }
+
 li{
 
     margin: 1em
 
-
 }
+
 a {
     text-decoration: none;
     color: black;
@@ -33,23 +32,26 @@ a {
     font-size: 1em;
     display: inline-block;
     padding: 100% 0;
+    z-index: 2;
+
 }
 
 nav a:hover {
-    color: darkblue;
+    color: #0000ac;
 }
 
 .logo {
     font-size: 3em;
-    padding: .2em 0;
     font-family: 'Montserrat', sans-serif;
     margin: 0 auto;
     position: absolute;
     left: calc(50% + (-60.5px));
+
 }
 
 .linkright{
     margin-left: auto;
+
 }
 
 
