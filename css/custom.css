@@ -1,0 +1,108 @@
+body{
+    margin: 0 auto;
+    width: 80%;
+    padding: 0;
+}
+
+.sign-up a {
+    color: #222222;
+}
+.form-control{
+    margin-left: 6px;
+}
+
+.container{
+    padding: 0;
+}
+
+.jumbotron{
+    background-image: url("../img/pizza.jpg");
+
+
+}
+
+.jumbotron h1{
+    background-color: lightgray;
+    opacity: 0.5;
+    width: 100%;
+    text-align: center;
+
+}
+
+.badge-dark{
+    background-color: gray;
+
+}
+
+.btn-right{
+    float: right;
+}
+
+.list-group {
+    border: 1px solid lightgray;
+    margin: 1em;
+
+}
+
+.btn{
+    background-color: #007BFF;
+}
+.btn:hover{
+    background-color: #2F447B;
+}
+
+.card{
+    margin-bottom: 1em;
+}
+
+.card-body{
+    padding: 0px;
+}
+
+.card-border {
+    border: solid 1px #eee;
+    margin: 0 1em;
+    padding-top: 1em;
+    border-bottom-right-radius: .5em;
+    border-bottom-left-radius: .5em;
+
+}
+.no-radius{
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+}
+
+.card-header{
+    background-color: #007BFF;
+    color: white;
+}
+
+.card-title{
+    border: solid 1px lightgray;
+    padding: 1em;
+    background-color: #eee;
+    margin: 1em 1em 0em;
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+}
+
+.card-text{
+    margin-left: 2em;
+}
+
+.card-footer{
+    margin: 0;
+    height: 4em;
+    background-color: #eee;
+}
+
+.form-control{
+    width: 97%;
+    margin: 1em;
+
+}
+
+label{
+     margin-left: .5em;
+ }
