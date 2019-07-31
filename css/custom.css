@@ -1,7 +1,18 @@
-body{
+.body-width{
     margin: 0 auto;
     width: 80%;
     padding: 0;
+}
+
+nav{
+    margin-bottom: 1em;
+}
+nav>div{
+    display: flex;
+}
+
+.nav-logo{
+    margin-top: 2px;
 }
 
 .sign-up a {
