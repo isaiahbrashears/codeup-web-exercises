@@ -11,9 +11,7 @@ nav>div{
     display: flex;
 }
 
-.nav-logo{
-    margin-top: 2px;
-}
+
 
 .sign-up a {
     color: #222222;
@@ -146,4 +144,8 @@ label{
     text-decoration: none;
     color: white;
     padding: 100% 0;
+}
+
+.no-bottom{
+    margin-top: 0;
 }
