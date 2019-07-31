@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
+                    <a class="nav-link " href="#">Order Online <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Menu</a>
@@ -31,10 +31,10 @@
                             <div class=>
                                 <span class="" ></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Zip Code" aria-label="Zipcode" >
+                            <input type="text" class="form-control nav-margin" placeholder="Zip Code" aria-label="Zipcode" >
                         </div>
                         <div>
-                            <button type="button" >Search stores near you!</button>
+                            <button type="button" class="nav-margin" >Search stores near you!</button>
                         </div>
                     </form>
                 </li>
@@ -45,26 +45,41 @@
         </div>
     </nav>
 
+        <!--BANNER-->
+
     <body class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Welcome to Pizza World</h1>
             </div>
         </div>
+
+        <!--END BANNER-->
+
         <form action="https://request-inspector.glitch.me/" method="post" accept-charset="UTF-8">
+
+            <!--TABS-->
+
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#size" role="tab" aria-controls="size" aria-selected="true">Size and Crust</a>
+                    <a class="nav-link active" id="size-tab" data-toggle="tab" href="#size" role="tab" aria-controls="size" aria-selected="true">Size and Crust</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Cheese and Sauce</a>
+                    <a class="nav-link" id="cheese-tab" data-toggle="tab" href="#cheese" role="tab" aria-controls="cheese" aria-selected="false">Cheese and Sauce</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Toppings</a>
+                    <a class="nav-link" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings" aria-selected="false">Toppings</a>
                 </li>
             </ul>
+
+            <!--END TABS-->
+
+
+            <!--SIZE AND CRUST TAB-->
+
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="size" role="tabpanel" aria-labelledby="home-tab">
+                <div class="tab-pane fade show active" id="size" role="tabpanel" aria-labelledby="size-tab">
+
                     <div class="card" >
                         <div class="card-header">
                             Choose Size and Crust
@@ -77,7 +92,7 @@
                                 <p class="card-text"> Garlic seasoned with a rich, buttery taste.</p>
                                 <ul class="list-group list-group-flush pizza-size" >
                                     <li class="list-group-item"><input type="radio" id="size1" name="size" value="small-hand" ><label for="size1"> Small (10")</label></li>
-                                    <li class="list-group-item"><input type="radio" id="size2" name="size" value="medium-hand"><label for="size2"> Medium (12")</label></li>
+                                    <li class="list-group-item no-radius"><input type="radio" id="size2" name="size" value="medium-hand"><label for="size2"> Medium (12")</label></li>
                                 </ul>
                             </div>
 
@@ -94,15 +109,22 @@
 
                             <br>
 
-                            <div class="card-footer">
-                                <a href="#cheese" class="btn btn-primary btn-right" >Next Step</a>
+                            <div class="card-footer flex-right">
+                                <a href="#cheese" class="btn btn-primary" >Next Step</a>
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <!--END SIZE AND CRUST TAB-->
+
+
+
+                <!--CHEESE AND SAUCE TAB-->
+
+                <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
+
                     <div class="card" >
                         <div class="card-header">
                             Choose Cheese and Sauce
@@ -155,7 +177,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+                <!--END CHEESE AND SAUCE TAB-->
+
+
+                <!--TOPPINGS TAB-->
+
+                <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="toppings">
+
                     <div class="card" >
                         <div class="card-header">
                             Choose Toppings
@@ -186,11 +215,15 @@
                             </div>
 
 
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-right">Checkout <i class="fas fa-shopping-cart"></i> </button>
+                            <div class="card-footer flex-right">
+                                <button type="submit" class="btn btn-primary ">Checkout <i class="fas fa-shopping-cart"></i> </button>
                             </div>
                         </div>
                     </div>
+
+                    <!--END TOPPINGS TAB-->
+
+
                 </div>
             </div>
 
@@ -203,8 +236,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
-</html>
+
     </body>
 
 </html>

@@ -7,6 +7,7 @@ body{
 .sign-up a {
     color: #222222;
 }
+
 .form-control{
     margin-left: 6px;
 }
@@ -15,10 +16,13 @@ body{
     padding: 0;
 }
 
-
-
 .nav-item{
     padding: 3px 0;
+}
+
+.nav-margin{
+    margin-left: 4px;
+    margin-top: 3px;
 }
 
 .nav-item:hover{
@@ -28,8 +32,6 @@ body{
 
 .jumbotron{
     background-image: url("../img/pizza.jpg");
-
-
 }
 
 .jumbotron h1{
@@ -39,7 +41,6 @@ body{
     text-align: center;
     font-family: Dialog;
     font-weight: bold;
-
 }
 
 .badge-dark{
@@ -53,13 +54,13 @@ body{
 
 .list-group {
     border: 1px solid lightgray;
-    margin: 1em;
 
 }
 
 .btn{
     background-color: #007BFF;
 }
+
 .btn:hover{
     background-color: #2F447B;
 }
@@ -74,7 +75,7 @@ body{
 
 .card-border {
     border: solid 1px #eee;
-    margin: 0 1em;
+    margin: 0 1em 1em;
     padding-top: 1em;
     border-bottom-right-radius: .5em;
     border-bottom-left-radius: .5em;
@@ -113,7 +114,6 @@ body{
 .form-sizing{
     width: 97%;
     margin: 1em;
-
 }
 
 label{
@@ -130,9 +130,9 @@ label{
     color: white;
     padding: 100% 0;
 }
+
 .btn-text1:hover{
     text-decoration: none;
     color: white;
     padding: 100% 0;
-
 }
