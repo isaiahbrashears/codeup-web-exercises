@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini Function Exercises</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    //Exercise 1
+
+    function returnFive() {
+        return 5;
+    }
+    console.log(returnFive());
+    
+
+   //Exercise 2
+
+    function isFive(number) {
+        return number === "5";
+    }
+    var userGeneratedNumber = prompt('enter a number');
+    console.log(isFive(userGeneratedNumber));
+
+
+   //Exercise 3
+
+    function isShortWord(wordToBeChecked) {
+        return wordToBeChecked.length <= 5;
+    }
+
+    var userGeneratedWord = prompt('enter a word');
+    console.log(isShortWord(userGeneratedWord));
+
+
+    //Exercise 4
+
+    function isSameLength(firstWord, secondWord) {
+        return firstWord.length === secondWord.length;
+    }
+
+    var firstUserGeneratedWord = prompt('Give me a word');
+    var secondUserGeneratedWord = prompt('Give me another word');
+    console.log(isSameLength(firstUserGeneratedWord, secondUserGeneratedWord));
+
+
+    //Exercise 5
+
+    function getSmallerSegment(stringToShrink, numberOfCharactersToShrinkTo) {
+        return stringToShrink.substring(0,numberOfCharactersToShrinkTo).toLowerCase();
+    }
+    var userGeneratedStringToShrink = prompt('I need a sentence');
+    var userGeneratedNumberToShrinkTo = prompt('I need a number');
+    console.log(getSmallerSegment(userGeneratedStringToShrink, userGeneratedNumberToShrinkTo));
+
+
+</script>
+</body>
+</html>
