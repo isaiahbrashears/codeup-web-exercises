@@ -17,7 +17,9 @@ var herculesDaysRented = prompt('How Many days have you rented "Hercules" for?')
 
 var pricePerDayDollars = prompt('What is the price per day in dollars for a rental?');
 
-alert('You owe $' + (Number(littleMermaidDaysRented) + Number(brotherBearDaysRented) + Number(herculesDaysRented)) * Number(pricePerDayDollars));
+var totalRentalCost = (Number(littleMermaidDaysRented) + Number(brotherBearDaysRented) + Number(herculesDaysRented)) * Number(pricePerDayDollars);
+
+alert('You owe $' + totalRentalCost.toFixed(2));
 
 
 /* Question 2 */
@@ -33,7 +35,9 @@ var amazonHoursWorked = prompt('How many hours did you work at Amazon this week?
 
 var facebookHoursWorked = prompt('How many hours did you work at Facebook this week?');
 
-alert('You have earned $' + ((googleHourlyPayRateDollars * googleHoursWorked) + (amazonHourlyPayRateDollars * amazonHoursWorked) + (facebookHourlyPayRateDollars * facebookHoursWorked)) + ' this week!');
+var paycheckForMonth = ((googleHourlyPayRateDollars * googleHoursWorked) + (amazonHourlyPayRateDollars * amazonHoursWorked) + (facebookHourlyPayRateDollars * facebookHoursWorked));
+
+alert('You have earned $' + paycheckForMonth.toFixed(2) + ' this week!');
 
 
 /* Question 3*/
@@ -47,7 +51,7 @@ alert('It is ' + canStudentEnroll + ' that you will be able to enroll at this ti
 
 
 /* Question 4*/
-var itemsNeededToBePurchasedForPomotion = prompt('In the promotion, how many items need to be purchased for the offer to be valid?');
+var itemsNeededToBePurchasedForPomotion = +prompt('In the promotion, how many items need to be purchased for the offer to be valid?');
 
 var itemAmountThatWasPurchased = prompt('How many items did you purchase');
 
