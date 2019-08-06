@@ -74,13 +74,20 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
+    function calculateTip(tipPercentage, billAmount) {
+        return tipPercentage * billAmount;
+    }
+
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-
+    var customerBillAmount = +prompt('What was the price of your bill?');
+    var customerTipPercentage = +prompt('What percentage do you want to tip?');
+    alert('$' + calculateTip(customerTipPercentage, customerBillAmount));
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -95,3 +102,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+    function applyDiscount(priceBeforeDiscount, percentageToDiscount) {
+        return priceBeforeDiscount - (priceBeforeDiscount * percentageToDiscount) ;
+}
+
+    var customerPriceBeforeDiscount = +prompt("How much did the item cost?");
+    var customerPercentageToDiscount = +prompt("What Percentage is to be discounted?");
+    alert('$' + applyDiscount(customerPriceBeforeDiscount, customerPercentageToDiscount))
