@@ -25,16 +25,18 @@
         return number === "5";
     }
     var userGeneratedNumber = prompt('enter a number');
+    console.log('is ' + userGeneratedNumber + ' equal to 5?')
     console.log(isFive(userGeneratedNumber));
 
 
    //Exercise 3
 
     function isShortWord(wordToBeChecked) {
-        return wordToBeChecked.length <= 5;
+        return wordToBeChecked.length < 5;
     }
 
     var userGeneratedWord = prompt('enter a word');
+    console.log('is ' + userGeneratedWord + ' shorter than 5 letters?')
     console.log(isShortWord(userGeneratedWord));
 
 
@@ -46,6 +48,7 @@
 
     var firstUserGeneratedWord = prompt('Give me a word');
     var secondUserGeneratedWord = prompt('Give me another word');
+    console.log('does ' + firstUserGeneratedWord + ' have the same amount of letters as ' + secondUserGeneratedWord + '?');
     console.log(isSameLength(firstUserGeneratedWord, secondUserGeneratedWord));
 
 
@@ -56,6 +59,7 @@
     }
     var userGeneratedStringToShrink = prompt('I need a sentence');
     var userGeneratedNumberToShrinkTo = prompt('I need a number');
+    console.log('if you take \"' + userGeneratedStringToShrink + '\" and shorten it to a substring of ' + userGeneratedNumberToShrinkTo + ' characters, you get:' );
     console.log(getSmallerSegment(userGeneratedStringToShrink, userGeneratedNumberToShrinkTo));
 
 
