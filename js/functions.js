@@ -108,4 +108,4 @@ var random = Math.floor((Math.random() * 3) + 1);
 
     var customerPriceBeforeDiscount = +prompt("How much did the item cost?");
     var customerPercentageToDiscount = +prompt("What Percentage is to be discounted?");
-    alert('$' + applyDiscount(customerPriceBeforeDiscount, customerPercentageToDiscount))
+    alert('$' + applyDiscount(customerPriceBeforeDiscount, customerPercentageToDiscount));
