@@ -12,7 +12,7 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name) {
-    return("Hello " + name)
+    return("Hello, " + name + "!")
 }
 /**
  * TODO:
@@ -58,7 +58,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
     function isTwo(number) {
-        return(random === 2)
+        return number === 2;
     }
 
     console.log(random + ' and 2 are equal: ' + isTwo(random));
@@ -106,6 +106,4 @@ var random = Math.floor((Math.random() * 3) + 1);
         return priceBeforeDiscount - (priceBeforeDiscount * percentageToDiscount) ;
 }
 
-    var customerPriceBeforeDiscount = +prompt("How much did the item cost?");
-    var customerPercentageToDiscount = +prompt("What Percentage is to be discounted?");
-    alert('$' + applyDiscount(customerPriceBeforeDiscount, customerPercentageToDiscount));
+console.log('$' + applyDiscount(100, .2));
