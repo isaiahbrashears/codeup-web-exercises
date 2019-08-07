@@ -1,5 +1,5 @@
 "use strict";
-
+(function () {
 
 
 
@@ -104,6 +104,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
     function applyDiscount(priceBeforeDiscount, percentageToDiscount) {
         return priceBeforeDiscount - (priceBeforeDiscount * percentageToDiscount) ;
-}
+    }
 
-console.log('$' + applyDiscount(100, .2));
+    console.log('$' + applyDiscount(100, .2));
+
+})();
