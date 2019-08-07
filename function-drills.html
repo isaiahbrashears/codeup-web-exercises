@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function Drills</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+
+    function isOdd(number) {
+        return number % 2 !== 0;
+    }
+
+    function isEven(number) {
+        return number % 2 === 0;
+    }
+
+    function identity(input) {
+        return input;
+    }
+
+    function isFive(number) {
+        return number === 5;
+    }
+
+    function addFive(number) {
+        return number + 5;
+    }
+
+    function isMultipleOfFive(input) {
+        return input % 5 === 0;
+    }
+
+    function isThree(input) {
+        return input === 3;
+    }
+
+    function isMultipleOfThree(input) {
+        return input % 3 === 0;
+    }
+
+    function isMultipleOfThreeAndFive(input) {
+        return input % 3 === 0 && input % 5 === 0;
+    }
+
+    function isMultipleOf(target, n) {
+        return target % n === 0;
+    }
+
+    function isTrue(boolean) {
+        return boolean === true;
+    }
+
+    function isFalse(boolean) {
+        return boolean === false;
+    }
+
+    function isTruthy(boolean) {
+        return !!boolean;
+    }
+
+    function isFalsy(boolean) {
+        return !boolean;
+    }
+
+    function isVowel(letter) {
+        return letter == 'a' ||
+            letter === 'A' ||
+            letter === 'e' ||
+            letter === 'E' ||
+            letter === 'i' ||
+            letter === 'I' ||
+            letter === 'o' ||
+            letter === 'O' ||
+            letter === 'u' ||
+            letter === 'U';
+    }
+
+    function isConsonant(letter) {
+        return letter !== 'a' &&
+            letter !== 'A' &&
+            letter !== 'e' &&
+            letter !== 'E' &&
+            letter !== 'i' &&
+            letter !== 'I' &&
+            letter !== 'o' &&
+            letter !== 'O' &&
+            letter !== 'u' &&
+            letter !== 'U';
+    }
+
+    function isCapital(letter) {
+        return letter === letter.toUpperCase();
+    }
+
+    function isLowerCase(letter) {
+        return letter === letter.toLowerCase();
+    }
+
+    function hasLowerCase(string) {
+        return string;
+    }
+
+
+
+</script>
+</body>
+</html>
