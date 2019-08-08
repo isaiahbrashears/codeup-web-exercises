@@ -18,7 +18,6 @@
  * Can you refactor your code to use functions?
  */
 
-/*
 var doesUserWantToEnterNumber = confirm('would you like to enter a number?');
 
 function usersNumberInformation(num) {
@@ -58,7 +57,7 @@ function userNumberFacts(num) {
 
     usersNumberInformation();
 
-/!* ########################################################################## *!/
+/* ########################################################################## */
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -67,7 +66,7 @@ function userNumberFacts(num) {
 //                  will contain a different color everytime the page loads)
     var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
     var randomColor = colors[Math.floor(Math.random() * colors.length)];
-/!**
+/**
  * TODO:
  * Create a function named `analyzeColor` that accepts a string that is a color
  * name as input. This function should return a message that related to that
@@ -83,45 +82,44 @@ function userNumberFacts(num) {
  *
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
- *!/
-var userColor = prompt("what's your favorite color?");
+ */
+    var userColor = prompt("what's your favorite color?");
 
-function whatIsthisColor(color) {
-   console.log(color);
-    switch (color) {
-        case('red'):
-            color ='Red is the color of apples. Except for the ones that are green';
-            break;
-        case('orange'):
-            color = 'Oranges are orange.';
-            break;
-        case('yellow'):
-            color = 'Yellow is a banana color.';
-            break;
-        case('green'):
-            color = 'You know what\'s green? Money baby! I\'m talking cash! Benjamins! Stacks! Scrilla! at least in the US, I don\'t know what color cash is in other countries. Maybe it\'s green, maybe it\'s purple. I just dont\'t know.';
-            break;
-        case('blue'):
-            color = 'Blue is sky color';
-            break;
-        case('indigo'):
-            color = 'indigo is purple with worse PR';
-            break;
-        case('violet'):
-            color = 'violet is purple with flair';
-            break;
-        default:
-            color = 'I don\'t even know what that color is';
+    function whatIsthisColor(color) {
+       console.log(color);
+        switch (color) {
+            case('red'):
+                color ='Red is the color of apples. Except for the ones that are green';
+                break;
+            case('orange'):
+                color = 'Oranges are orange.';
+                break;
+            case('yellow'):
+                color = 'Yellow is a banana color.';
+                break;
+            case('green'):
+                color = 'You know what\'s green? Money baby! I\'m talking cash! Benjamins! Stacks! Scrilla! at least in the US, I don\'t know what color cash is in other countries. Maybe it\'s green, maybe it\'s purple. I just dont\'t know.';
+                break;
+            case('blue'):
+                color = 'Blue is sky color';
+                break;
+            case('indigo'):
+                color = 'indigo is purple with worse PR';
+                break;
+            case('violet'):
+                color = 'violet is purple with flair';
+                break;
+            default:
+                color = 'I don\'t even know what that color is';
+        }
+        alert(color);
+        console.log(color)
+        return color;
     }
-    alert(color);
-    console.log(color)
-    return color;
-}
 whatIsthisColor(userColor);
 alert("Here's a random color: " + randomColor);
 whatIsthisColor(randomColor);
 
-*/
 
 /**
  * TODO:
@@ -142,25 +140,27 @@ whatIsthisColor(randomColor);
  */
 
 /* ########################################################################## */
-function caculateTotal(luckyNumber, total) {
-    if(luckyNumber === 0){
-        return 'Sorry you still owe: $'+ total;
-    }else if(luckyNumber === 1){
-        return 'You Only owe: $' + total - (.10 * +total);
-    }else if(luckyNumber === 2){
-        return 'You Only owe: $' + total - (.25 * +total);
-    }else if(luckyNumber === 3){
-        return 'You Only owe: $' + total - (.35 * +total);
-    }else if(luckyNumber === 4){
-        return 'You Only owe: $' + total - (.50 * total);
-    }else{
-        return 'Congratulations it is Free!';
+
+    function caculateTotal(luckyNumber, total) {
+        if(luckyNumber === 0){
+            return 'Sorry you still owe: $'+ total;
+        }else if(luckyNumber === 1){
+            return 'You only owe: $' + (total - (.1 * +total));
+        }else if(luckyNumber === 2){
+            return 'You only owe: $' + (total - (.25 * +total));
+        }else if(luckyNumber === 3){
+            return 'You only owe: $' + (total - (.35 * +total));
+        }else if(luckyNumber === 4){
+            return 'You only owe: $' + (total - (.5 * total));
+        }else{
+            return 'Congratulations it is Free!';
+        }
     }
-}
+
     var luckyNumber = Math.floor(Math.random() * 6);
     var userPrice = prompt('What was your total price?')
     alert('Your lucky number is: ' + luckyNumber);
-    alert( caculateTotal(4, userPrice));
+    alert( caculateTotal(luckyNumber, userPrice));
 /**
  * TODO:
  * Suppose there's a promotion in Walmart, each customer is given a randomly
