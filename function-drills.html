@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function Drills</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+
+
+    function isOdd(number) {
+        return number % 2 !== 0;
+    }
+
+    function isEven(number) {
+        return number % 2 === 0;
+    }
+
+    function identity(input) {
+        return input;
+    }
+
+    function isFive(number) {
+        return number === 5;
+    }
+
+    function addFive(number) {
+        return number + 5;
+    }
+
+    function isMultipleOfFive(input) {
+        return input % 5 === 0;
+    }
+
+    function isThree(input) {
+        return input === 3;
+    }
+
+    function isMultipleOfThree(input) {
+        return input % 3 === 0;
+    }
+
+    function isMultipleOfThreeAndFive(input) {
+        return input % 3 === 0 && input % 5 === 0;
+    }
+
+    function isMultipleOf(target, n) {
+        return target % n === 0;
+    }
+
+    function isTrue(boolean) {
+        return boolean === true;
+    }
+
+    function isFalse(boolean) {
+        return boolean === false;
+    }
+
+    function isTruthy(boolean) {
+        return !!boolean;
+    }
+
+    function isFalsy(boolean) {
+        return !boolean;
+    }
+
+    function isVowel(letter) {
+        return letter == 'a' ||
+            letter === 'A' ||
+            letter === 'e' ||
+            letter === 'E' ||
+            letter === 'i' ||
+            letter === 'I' ||
+            letter === 'o' ||
+            letter === 'O' ||
+            letter === 'u' ||
+            letter === 'U';
+    }
+
+    function isConsonant(letter) {
+        return letter !== 'a' &&
+            letter !== 'A' &&
+            letter !== 'e' &&
+            letter !== 'E' &&
+            letter !== 'i' &&
+            letter !== 'I' &&
+            letter !== 'o' &&
+            letter !== 'O' &&
+            letter !== 'u' &&
+            letter !== 'U';
+    }
+
+    function isCapital(letter) {
+        return letter === letter.toUpperCase();
+    }
+
+    function isLowerCase(letter) {
+        return letter === letter.toLowerCase();
+    }
+
+
+    function hasLowerCase(str) {
+        return str.toUpperCase() !== str;
+    }
+
+    function hasUpperCase(str) {
+        return str.toLowerCase() !== str;
+    }
+
+    function isSpace(letter) {
+        return letter === ' ';
+    }
+
+    function isZero(number) {
+        return +number === 0;
+    }
+
+    function notZero(input) {
+        return +input !== 0;
+    }
+
+    function lowerCase(str) {
+        return str === str.toLowerCase();
+    }
+
+    function double(n) {
+        return +n * 2;
+    }
+
+    function triple(n) {
+        return +n * 3;
+    }
+
+    function quadruple(n) {
+        return +n * 4;
+    }
+
+    function half(n) {
+        return +n /2;
+    }
+
+    function subtract(a, b) {
+        return +a - +b;
+    }
+    
+    function multiply(a, b) {
+        return +a * +b;
+    }
+
+    function divide(a, b) {
+        return +a / +b;
+    }
+
+    function remainder(a, b) {
+        return +a % +b;
+    }
+
+    function cube(n) {
+        return +n * +n * +n;
+    }
+
+    function squareRoot(n) {
+        return Math.sqrt(n);
+    }
+
+    function cubeRoot(n) {
+        return Math.cbrt(n);
+    }
+    
+    function invertSign(number) {
+        return number * (-1);
+    }
+
+    function degreesToRaidians(degree) {
+        return degree * (Math.PI/180);
+    }
+
+    function radiansToDegrees(rad) {
+        return rad * (180/Math.PI);
+    }
+
+    function isBlank(input) {
+        return input === '' || input === ' ' || input === '     ';
+    }
+
+    function trim(str) {
+        return str.trim();
+    }
+
+    function areEqual(input1, input2) {
+        return input1 == input2;
+    }
+
+    function areIdentical(input1, input2) {
+        return input1 === input2;
+    }
+
+    function not(input) {
+        return !input;
+    } 
+    
+    function notNot() {
+        
+    }
+
+</script>
+</body>
+</html>
