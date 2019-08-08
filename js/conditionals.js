@@ -18,44 +18,58 @@
  * Can you refactor your code to use functions?
  */
 
-var doesUserWantToEnterNumber = confirm('would you like to enter a number?');
 
-function usersNumberInformation(num) {
-    if(doesUserWantToEnterNumber === true){
-        num = +prompt('Then go ahead and enter a number');
-        return isThisANumber(num);
-    }
+
+var doesUserWantToEnterNumber = confirm('would you like to enter a number?');
+if(doesUserWantToEnterNumber){
+    var userNum = +prompt('Then go ahead and enter a number');
+    isThisANumber(userNum);
 }
+
 
 
 function isThisANumber(num) {
     if (isNaN(num)) {
-        return  alert('thats not a number.');
+        alert('thats not a number.');
     } else {
-        return userNumberFacts(num);
+        isNumberEven(num);
+        return 'is a number';
     }
 }
 
 
-function userNumberFacts(num) {
+function isNumberEven(num) {
     if (num % 2 === 0) {
+        plus100(num);
         alert(num + ' is even!');
     } else {
+        plus100(num);
         alert(num + ' is odd!');
     }
+}
+
+
+function plus100(num){
+    isNumberPos(num);
     alert(num + ' plus 100 is: ' + (num + 100));
+}
+
+
+function isNumberPos(num) {
+
     if (num > 0) {
-        return  alert(num + ' is a positive number');
+        alert(num + ' is a positive number');
     } else if(num === 0){
-        return alert(num + ' is neither positive nor negative.')
+        alert(num + ' is neither positive nor negative.')
     }else{
-        return alert(num + ' is a negative number');
+        alert(num + ' is a negative number');
     }
 }
 
 
 
-    usersNumberInformation();
+
+
 
 /* ########################################################################## */
 
