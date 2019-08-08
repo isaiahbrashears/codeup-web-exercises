@@ -18,46 +18,47 @@
  * Can you refactor your code to use functions?
  */
 
+/*
+var doesUserWantToEnterNumber = confirm('would you like to enter a number?');
 
-   function isThisANumber(num) {
-        if (isNaN(num)) {
-            return  alert('thats not a number.');
-        } else {
-
-            return userNumberFacts(num);
-        }
+function usersNumberInformation(num) {
+    if(doesUserWantToEnterNumber === true){
+        num = +prompt('Then go ahead and enter a number');
+        return isThisANumber(num);
     }
+}
 
 
-    function userNumberFacts(num) {
-        if (num % 2 === 0) {
-            alert(num + ' is even!');
-        } else {
-            alert(num + ' is odd!');
-        }
-
-        alert(num + ' plus 100 is: ' + (num + 100));
-
-        if (num > 0) {
-            return  alert(num + ' is a positive number');
-        } else {
-            return alert(num + ' is a negative number');
-        }
+function isThisANumber(num) {
+    if (isNaN(num)) {
+        return  alert('thats not a number.');
+    } else {
+        return userNumberFacts(num);
     }
+}
 
 
-    var doesUserWantToEnterNumber = confirm('would you like to enter a number?');
-
-    function usersNumberInformation(num) {
-        if(doesUserWantToEnterNumber === true){
-            num = +prompt('user wants to enter a number');
-            return isThisANumber(num);
-        }
+function userNumberFacts(num) {
+    if (num % 2 === 0) {
+        alert(num + ' is even!');
+    } else {
+        alert(num + ' is odd!');
     }
+    alert(num + ' plus 100 is: ' + (num + 100));
+    if (num > 0) {
+        return  alert(num + ' is a positive number');
+    } else if(num === 0){
+        return alert(num + ' is neither positive nor negative.')
+    }else{
+        return alert(num + ' is a negative number');
+    }
+}
+
+
 
     usersNumberInformation();
 
-/* ########################################################################## */
+/!* ########################################################################## *!/
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -66,7 +67,7 @@
 //                  will contain a different color everytime the page loads)
     var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
     var randomColor = colors[Math.floor(Math.random() * colors.length)];
-/**
+/!**
  * TODO:
  * Create a function named `analyzeColor` that accepts a string that is a color
  * name as input. This function should return a message that related to that
@@ -82,40 +83,46 @@
  *
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
- */
+ *!/
 var userColor = prompt("what's your favorite color?");
 
-function f() {
-    switch (userColor) {
+function whatIsthisColor(color) {
+   console.log(color);
+    switch (color) {
         case('red'):
-            alert('Red is the color of apples. Except for the ones that are green');
+            color ='Red is the color of apples. Except for the ones that are green';
             break;
         case('orange'):
-            alert('Oranges are orange.');
+            color = 'Oranges are orange.';
             break;
         case('yellow'):
-            alert('Yellow is a banana color.');
+            color = 'Yellow is a banana color.';
             break;
         case('green'):
-            alert('You know what\'s green? Money baby! I\'m talking cash! Benjamins! Stacks! Scrilla! at least in the US, I don\'t know what color cash is in other countries. Maybe it\'s green, maybe it\'s purple. I just dont\'t know.');
+            color = 'You know what\'s green? Money baby! I\'m talking cash! Benjamins! Stacks! Scrilla! at least in the US, I don\'t know what color cash is in other countries. Maybe it\'s green, maybe it\'s purple. I just dont\'t know.';
             break;
         case('blue'):
-            alert('Blue is sky color');
+            color = 'Blue is sky color';
             break;
         case('indigo'):
-            alert('indigo is purple with worse PR');
+            color = 'indigo is purple with worse PR';
             break;
         case('violet'):
-            alert('violet is purple with flair');
+            color = 'violet is purple with flair';
             break;
         default:
-            alert('I don\'t even know what that color is');
+            color = 'I don\'t even know what that color is';
     }
+    alert(color);
+    console.log(color)
+    return color;
 }
-console.log(randomColor);
-console.log(userColor);
+whatIsthisColor(userColor);
+alert("Here's a random color: " + randomColor);
+whatIsthisColor(randomColor);
 
-;
+*/
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
@@ -135,7 +142,25 @@ console.log(userColor);
  */
 
 /* ########################################################################## */
-
+function caculateTotal(luckyNumber, total) {
+    if(luckyNumber === 0){
+        return 'Sorry you still owe: $'+ total;
+    }else if(luckyNumber === 1){
+        return 'You Only owe: $' + total - (.10 * +total);
+    }else if(luckyNumber === 2){
+        return 'You Only owe: $' + total - (.25 * +total);
+    }else if(luckyNumber === 3){
+        return 'You Only owe: $' + total - (.35 * +total);
+    }else if(luckyNumber === 4){
+        return 'You Only owe: $' + total - (.50 * total);
+    }else{
+        return 'Congratulations it is Free!';
+    }
+}
+    var luckyNumber = Math.floor(Math.random() * 6);
+    var userPrice = prompt('What was your total price?')
+    alert('Your lucky number is: ' + luckyNumber);
+    alert( caculateTotal(4, userPrice));
 /**
  * TODO:
  * Suppose there's a promotion in Walmart, each customer is given a randomly
@@ -163,6 +188,6 @@ console.log(userColor);
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+
+
 })();
