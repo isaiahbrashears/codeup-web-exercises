@@ -84,33 +84,33 @@
  * console.logging the function's return value
  */
 var userColor = prompt("what's your favorite color?");
-switch(userColor) {
-    case('red'):
-        alert ('Red is the color of apples. Except for the ones that are green');
-        break;
-    case('orange'):
-        alert( 'Oranges are orange.');
-        break;
-    case( 'yellow'):
-        alert( 'Yellow is a banana color.');
-        break;
-    case('green'):
-        alert ('You know what\'s green? Money baby! I\'m talking cash! Benjamins! Stacks! Scrilla! at least in the US, I don\'t know what color cash is in other countries. Maybe it\'s green, maybe it\'s purple. I just dont\'t know.');
-        break;
-    case('blue'):
-        alert( 'Blue is sky color');
-        break;
-    case('indigo'):
-        alert( 'indigo is purple with worse PR');
-        break;
-    case('violet'):
-        alert( 'violet is purple with flair');
-        break;
-    default:
-        alert ('I don\'t even know what that color is');
 
-
-
+function f() {
+    switch (userColor) {
+        case('red'):
+            alert('Red is the color of apples. Except for the ones that are green');
+            break;
+        case('orange'):
+            alert('Oranges are orange.');
+            break;
+        case('yellow'):
+            alert('Yellow is a banana color.');
+            break;
+        case('green'):
+            alert('You know what\'s green? Money baby! I\'m talking cash! Benjamins! Stacks! Scrilla! at least in the US, I don\'t know what color cash is in other countries. Maybe it\'s green, maybe it\'s purple. I just dont\'t know.');
+            break;
+        case('blue'):
+            alert('Blue is sky color');
+            break;
+        case('indigo'):
+            alert('indigo is purple with worse PR');
+            break;
+        case('violet'):
+            alert('violet is purple with flair');
+            break;
+        default:
+            alert('I don\'t even know what that color is');
+    }
 }
 console.log(randomColor);
 console.log(userColor);
