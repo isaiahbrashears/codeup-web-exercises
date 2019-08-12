@@ -1,13 +1,13 @@
 
 
 
-
+var numToMultiplyBy = Math.floor(Math.random() * 9) + 1;
 function showMultiplicationTable(num) {
     for (i = 1; i <= 10; i++) {
         console.log(num + ' x ' + i + ' = ' + ( num * i));
     }
 }
-showMultiplicationTable(2);
+showMultiplicationTable(numToMultiplyBy);
 
 
 
