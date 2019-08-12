@@ -1,3 +1,7 @@
+"use strict";
+
+(function () {
+
 var x = 2;
 while (x <= 65536) {
     console.log(x);
@@ -20,3 +24,5 @@ do {
 }while (allCones > 0);
 
 console.log('No more cones to sell!');
+
+})();
