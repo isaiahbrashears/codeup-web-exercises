@@ -17,11 +17,12 @@ nav ul {
     height: 100%;
     width: 100%;
     margin: 0 auto;
+
 }
 
 li{
-
-    margin: 1em
+    box-sizing: border-box;
+    margin: 0;
 
 }
 
@@ -31,7 +32,7 @@ a {
     font-family: 'Work Sans', sans-serif;
     font-size: 1em;
     display: inline-block;
-    padding: 100% 0;
+    padding: 100% 1em;
     z-index: 2;
 
 }
