@@ -1,0 +1,34 @@
+function showMultiplicationTable(num) {
+    for (i = 1; i <= 10; i++) {
+        console.log(num + ' x ' + i + ' = ' + ( num * i));
+    }
+}
+showMultiplicationTable(2);
+
+
+
+
+for (i = 1; i <= 10; i++){
+    var numToCheck = Math.floor(Math.random() * 180) + 20;
+    if(numToCheck % 2 === 0){
+        console.log(numToCheck + ' is even');
+    }else {
+        console.log(numToCheck + ' is odd.');
+    }
+}
+
+
+
+
+var x = 1;
+for (i = 1; i <= 9; i++ ){
+    console.log( i * x);
+    x = x + '1';
+}
+
+
+
+
+for (i = 100; i > 0; i -= 5){
+    console.log(i)
+}
