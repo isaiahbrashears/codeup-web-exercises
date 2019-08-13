@@ -54,20 +54,20 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-        function firstElement(array) {
+        function first(array) {
             console.log(array[0]);
         }
 
-        function secondElement(array) {
+        function second(array) {
             console.log(array[1]);
         }
 
-        function lastElement(array) {
+        function last(array) {
             console.log(array.slice(-1)[0]);
         }
 
 
-        firstElement(names);
-        secondElement(names);
-        lastElement(names);
+        first(names);
+        second(names);
+        last(names);
 })();
