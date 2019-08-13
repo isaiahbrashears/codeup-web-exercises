@@ -37,7 +37,7 @@ for (var i = 1; i <= 9; i++ ){
 
 
 for (var i = 100; i > 0; i -= 5){
-    console.log(i)
+    console.log(i);
 }
 
 })();
