@@ -64,6 +64,7 @@
 
         function last(array) {
             return (array.slice(-1)[0]);
+            /*return array[names.length -1]*/
         }
 
 
