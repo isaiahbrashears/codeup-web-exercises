@@ -20,7 +20,7 @@ function oddNumbersSkippingUserNumber (num) {
         }
         console.log("here's an odd number: " + i);
     }
-    return x;
+    return num;
 }
 oddNumbersSkippingUserNumber(userNumber);
 
