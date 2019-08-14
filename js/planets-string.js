@@ -30,4 +30,7 @@
 
         console.log(planetsUL);
 
+        document.write(planetsBreak);
+        document.write((planetsUL));
+
 })();
