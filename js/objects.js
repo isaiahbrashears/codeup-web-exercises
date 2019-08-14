@@ -57,13 +57,14 @@
 
         shoppers[i].howMuchDoTheyOwe = function () {
            if (this.amount < 200){
-               console.log(this.name + ' owes $' + this.amount)
+               console.log(this.name + ' your bill is $' + this.amount + '. You did not recieve a discount so you still owe: $' + this.amount)
            }else{
-               console.log(this.name + ' owes $' + (this.amount - (this.amount * .12)));
+               console.log(this.name + ' your bill is $' + this.amount + '. You recieved a discount of ' + (this.amount * .12) + '. You owe: $' + (this.amount - (this.amount * .12)));
            }
         };
         shoppers[i].howMuchDoTheyOwe();
     }
+
     console.log('---');
 
     /** TODO:
