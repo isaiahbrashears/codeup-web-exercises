@@ -135,12 +135,14 @@
         console.log( 'Book # ' + (j + 1));
         console.log('Title: ' + books[j].title);
         console.log('Author: ' + books[j].author.firstName + ' ' + books[j].author.lastName);
-        console.log('---');
+
     }
 
     for (var j = 0; j < books.length; j++){
         showBookInfo(j);
+        console.log('---');
     }
+    books[0].title
 
 
 
