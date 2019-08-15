@@ -9,7 +9,7 @@
             // TODO: complete this method
             // hint: area = pi * radius^2
 
-            return this.radius * Math.PI; // TODO: return the proper value
+            return Math.pow( this.radius, 2) * Math.PI; // TODO: return the proper value
         },
 
         logInfo: function (doRounding) {
@@ -22,7 +22,6 @@
             }else{
                 console.log("Area of a circle with radius: " + this.radius + ", is:  " + this.getArea());
             }
-
         }
     };
 
