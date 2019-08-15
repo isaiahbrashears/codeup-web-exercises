@@ -143,7 +143,7 @@
         showBookInfo(j);
         console.log('---');
     }
-    books[0].title
+
 
 
 
