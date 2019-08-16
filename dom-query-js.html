@@ -37,7 +37,7 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
 
-       var changeHeader = function(e){
+       var changeHeader = function(){
            mainHeader.innerHTML = "JavaScript is Cool";
        };
         document.getElementById('header-btn').addEventListener('click', changeHeader, false);
@@ -50,7 +50,7 @@
 
         // TODO: Set the text color of subHeader to blue
 
-        var changeSubHeader = function(e){
+        var changeSubHeader = function(){
             subHeader.style.color = 'blue';
         };
 
@@ -65,7 +65,7 @@
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
 
-        var changeList = function (e) {
+        var changeList = function () {
             for (var i = 0; i < listItems.length; i++){
 
                 if( listItems[i].getAttribute("data-dbid") === '1'){
@@ -86,7 +86,7 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
-        var changeParagraph = function(e){
+        var changeParagraph = function(){
             subParagraphs[0].innerText = 'Mission Accomplished!';
         };
 
