@@ -5,30 +5,49 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
-    <title>Mapbox Mini Exercise 1</title>
+    <title>Mapbox Mini Exercise 3</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+
+    </style>
+
 </head>
 <body>
-
 <div id='map' style='width: 100%; height: 700px;'></div>
 
 
 <script src="js/keys.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
 <script>
+
     mapboxgl.accessToken = mapboxToken;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 12,
-        center: [-81.9498, 28.0395]
+        center: [-77.0369, 38.9072]
     });
 
-    setTimeout(function () {
-        map.jumpTo({center: [-98.4916, 38.4252],
-            zoom: 3.3 });
-        map.setStyle ('mapbox://styles/mapbox/satellite-v9');
-    }, 5000);
+
+    var lpopup = new mapboxgl.Popup()
+        .setHTML('<h3>Lincoln Memorial</h3>');
+
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-77.0502, 38.8893])
+        .setPopup(lpopup)
+        .addTo(map);
+
+
+
+
+
+
 
 </script>
 </body>
