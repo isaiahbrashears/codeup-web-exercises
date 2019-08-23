@@ -8,10 +8,10 @@
     <title>jQuery</title>
 </head>
 <body>
-    <h1 id="header" class="heading">jQuery</h1>
-    <p id="paragraph" > this is a paragraph</p>
+    <h1 id="header" class="codeup">jQuery</h1>
+    <p id="paragraph" class="codeup" > this is a paragraph</p>
 
-    <ul id="unordered-list">
+    <ul id="unordered-list" class="list">
         <li id="list1"> list item 1</li>
         <li id="list2"> list item 2</li>
         <li id="list3"> list item 3</li>
@@ -29,6 +29,16 @@
         //     alert( 'The DOM has finished loading!' );
         // });
 
+        // $(document).ready(function () {
+        //     $(".codeup").css('border', '1px solid red');
+        //
+        // });
+
+        $(document).ready(function () {
+            $('li, h1, p').css('font-size', "20px");
+            alert($('h1').text());
+
+        })
 
 
     </script>
