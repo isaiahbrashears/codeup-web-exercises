@@ -19,7 +19,7 @@
     function updateTimer() {
         if (detonationTimer == 0) {
             alert('EXTERMINATE!');
-            document.body.innerHTML = '';
+            document.body.innerHTML = 'boom';
         } else if (detonationTimer > 0) {
             document.getElementById('timer').innerHTML = detonationTimer;
         }
@@ -34,7 +34,7 @@
     function defuseTheBOM() {
         clearInterval(intervalID);
     }
-gi
+
     // Don't modify anything below this line!
     //
     // This causes the defuseTheBOM() function to be called
