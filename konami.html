@@ -10,7 +10,7 @@
 
         #awake{
             visibility: hidden;
-            -webkit-transition: opacity 6s, visibility 6s;
+            -webkit-transition: opacity 7s, visibility 7s;
             transition: opacity 25s, visibility 25s;
             opacity: 0;
         }
@@ -20,36 +20,39 @@
 <h1>Konami Code</h1>
 <div id ='awake'><img src="img/awake.jpg" height="611" /></div>
 
+<audio id="pop">
+    <source src="audio/r-r.mp3" type="audio/mpeg">
+</audio>
+
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
 
-        var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-        var konamiRefresh = [91 ,38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    var konamiRefresh = [91 ,38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
 
 
+    var cheatCode = [];
+    $('body').keyup(function(event){
+        cheatCode.push(event.which);
+        console.log(cheatCode);
 
-        var cheatCode = [];
-        $('body').keyup(function(event){
-            cheatCode.push(event.which);
-            console.log(cheatCode);
+        if (cheatCode.join(',') === konami.join(',') || cheatCode.join(',') === konamiRefresh.join(',')){
+            $('audio#pop')[0].play();
+            alert('You are Contra now');
+            $('body').css('background-color', 'black');
+            $('#awake').css({
+                'visibility': 'visible',
+                'opacity': '1'
+            });
+            $('body').off();
+        } else if (cheatCode.length >= konamiRefresh.length){
+            alert('You are not Contra');
+            cheatCode = [];
+        }
 
-           if (cheatCode.join(',') === konami.join(',') || cheatCode.join(',') === konamiRefresh.join(',')){
-               alert('You are Contra now');
-               $('body').css('background-color', 'black');
-               $('awake').css('background-image', "src('img/awake.jpg') ");
-               $('#awake').css({
-                   'visibility': 'visible',
-                   'opacity': '1'
-               });
-               ('body').off();
-           } else if (cheatCode.length >= konamiRefresh.length){
-               alert('You aint Contra');
-               cheatCode = [];
-           }
-
-            console.log(event.keyCode);
-        });
+        console.log(event.keyCode);
+    });
 
 </script>
 </body>
