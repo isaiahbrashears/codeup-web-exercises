@@ -30,17 +30,18 @@
 
     var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
     var konamiRefresh = [91 ,38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
-
-
     var cheatCode = [];
+
+
     $('body').keyup(function(event){
         cheatCode.push(event.which);
         console.log(cheatCode);
 
         if (cheatCode.join(',') === konami.join(',') || cheatCode.join(',') === konamiRefresh.join(',')){
             $('audio#pop')[0].play();
-            alert('You are Contra now');
             $('body').css('background-color', 'black');
+
+            alert('You are Contra now');
             $('#awake').css({
                 'visibility': 'visible',
                 'opacity': '1'
