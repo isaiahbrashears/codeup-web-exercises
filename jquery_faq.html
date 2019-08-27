@@ -53,18 +53,22 @@
 
     <script src="js/jquery-2.2.4.js"></script>
     <script>
-        $('#link').click(function() {
-            $( "dd" ).toggleClass('invisible');
+    (function () {
+        "use strict";
+        $(document).ready(function () {
+            $('#link').click(function() {
+                $( "dd" ).toggleClass('invisible');
 
+            });
+
+            $('dt').addClass('high-light');
+
+
+            $('.high-light').click(function(){
+                $(this).css('background-color', 'yellow');
+            });
         });
-
-        $('dt').addClass('high-light');
-
-
-        $('.high-light').click(function(){
-            $(this).css('background-color', 'yellow');
-        })
-
+    })();
     </script>
 </body>
 </html>
