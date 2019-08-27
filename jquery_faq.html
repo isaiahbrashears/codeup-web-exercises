@@ -10,6 +10,18 @@
         .invisible{
             visibility: hidden;
         }
+
+        .frame{
+            height: 200px;
+            width: 200px;
+            border: 2em solid saddlebrown ;
+            margin: 1em;
+            float: left;
+        }
+
+        .spacing{
+            clear: top;
+        }
     </style>
 </head>
 <body>
@@ -47,9 +59,42 @@
         <dd class="invisible">10.) My dad's a senator</dd>
         <br>
     </dl>
-
     <a href="#" id="link">Toggle Answers</a>
+    <br><br>
 
+    <h3>Yosemite</h3>
+    <ul>
+        <li>It's Fresh</li>
+        <li>It's New</li>
+        <li>It's Bigger</li>
+        <li>It's Better Than Ever!</li>
+    </ul>
+    <h3>Grand Canyon</h3>
+    <ul>
+        <li>It's Big</li>
+        <li>It's a Hole</li>
+        <li>It took a team of 1000 construction specialist to dig</li>
+        <li>It's Grand</li>
+    </ul>
+    <h3>Washington Monument</h3>
+    <ul>
+        <li>It's Tall</li>
+        <li>It actually is a National Park technically</li>
+        <li>It was in Spider-man</li>
+        <li>It's Tall</li>
+    </ul>
+
+    <button id="btn">Yellow</button>
+    <br><br>
+
+    <div class="frame" id="frame1"><img height="200" width="200"  src="img/pitt.jpg" alt="dog"></div>
+    <div class="frame" id="frame2"><img height="200" width="200"  src="img/scooter.jpg" alt="scooter"></div>
+    <div class="frame" id="frame3"><img height="200" width="200"  src="img/laptops.jpg" alt="laptop"></div>
+    <br>
+
+        <button id="btn1" class="spacing">swap</button>
+        <button id="btn2" class="spacing">swap</button>
+        <button id="btn3" class="spacing">swap</button>
 
     <script src="js/jquery-2.2.4.js"></script>
     <script>
@@ -65,9 +110,53 @@
 
 
             $('.high-light').click(function(){
-                $(this).css('background-color', 'yellow');
+                $(this).css('background-color', 'cyan');
+            });
+
+
+            $('#btn').click(function () {
+                $('ul').each(function () {
+                    $(this).children().last().css('background-color', 'yellow')
+                });
+            });
+
+            $('h3').click(function () {
+                $(this).next().children('li').css('font-weight', 'bold')
+            });
+
+            $('li').click(function () {
+                $(this).parent().children().first().css('color', 'blue')
+            });
+
+            //picture frame bonus
+
+            $('#btn1').click(function(){
+                $('#frame1').children('img').appendTo($("#frame2"));
+                $('#frame2').children('img').first().appendTo($("#frame1"));
+            });
+
+
+            $('#btn2').click(function () {
+                var leftOrRight = Math.floor(Math.random()* 2);
+                if( leftOrRight === 0){
+                    $('#frame2').children('img').appendTo($("#frame3"));
+                    $('#frame3').children('img').first().appendTo($("#frame2"));
+                }else{
+                    $('#frame2').children('img').appendTo($("#frame1"));
+                    $('#frame1').children('img').first().appendTo($("#frame2"));
+                }
+            });
+
+            $('#btn3').click(function () {
+                $('#frame3').children('img').appendTo($("#frame2"));
+                $('#frame2').children('img').first().appendTo($("#frame3"));
             });
         });
+
+
+
+
+
     })();
     </script>
 </body>
