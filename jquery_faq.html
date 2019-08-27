@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>National Parks</title>
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>National Parks FAQs</h1>
+
+    <dl>
+        <dt>1.) Are the Parks big?</dt>
+        <dd class="invisible">1.) These parks are big sometimes</dd>
+        <br>
+        <dt>2.) Are the Parks a fun for the family?</dt>
+        <dd class="invisible">2.) Most of these parks don't even have a jungle gym so don't let your mom trick you into going</dd>
+        <br>
+        <dt>3.) What makes Old Faithful so Reliable?</dt>
+        <dd class="invisible">3.) Old Faithful is just a sprinkler on a timer.</dd>
+        <br>
+        <dt>4.) What is the best National Park to travel to?</dt>
+        <dd class="invisible">4.) Grand Canyon is a National Park Probably</dd>
+        <br>
+        <dt>5.) What do the Parks have to offer?</dt>
+        <dd class="invisible">5.) Google Yellowstone</dd>
+        <br>
+        <dt>6.) What do Park Rangers Do?</dt>
+        <dd class="invisible">6.) Park Rangers work at National Parks</dd>
+        <br>
+        <dt>7.) How many National Parks are there?</dt>
+        <dd class="invisible">7.) There over 5 National Parks</dd>
+        <br>
+        <dt>8.) What makes Yositmite a National Park</dt>
+        <dd class="invisible">8.) Yosimite Sam was based out of Yosimite.</dd>
+        <br>
+        <dt>9.) What is the combined total of square miles that the National Parks take up? </dt>
+        <dd class="invisible">9.) Fantastic question!</dd>
+        <br>
+        <dt>10.) How did you get this job promoting the National Parks?</dt>
+        <dd class="invisible">10.) My dad's a senator</dd>
+        <br>
+    </dl>
+
+    <a href="#" id="link">Toggle Answers</a>
+
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+        $('#link').click(function() {
+            $( "dd" ).toggleClass('invisible');
+
+        });
+
+        $('dt').addClass('high-light');
+
+
+        $('.high-light').click(function(){
+            $(this).css('background-color', 'yellow');
+        })
+
+    </script>
+</body>
+</html>
