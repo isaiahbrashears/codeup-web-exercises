@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>National Parks</title>
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+
+        .frame{
+            height: 200px;
+            width: 200px;
+            border: 2em solid saddlebrown ;
+            margin: 1em;
+            float: left;
+        }
+
+        .spacing{
+            clear: top;
+        }
+    </style>
+</head>
+<body>
+    <h1>National Parks FAQs</h1>
+
+    <dl>
+        <dt>1.) Are the Parks big?</dt>
+        <dd class="invisible">1.) These parks are big sometimes</dd>
+        <br>
+        <dt>2.) Are the Parks a fun for the family?</dt>
+        <dd class="invisible">2.) Most of these parks don't even have a jungle gym so don't let your mom trick you into going</dd>
+        <br>
+        <dt>3.) What makes Old Faithful so Reliable?</dt>
+        <dd class="invisible">3.) Old Faithful is just a sprinkler on a timer.</dd>
+        <br>
+        <dt>4.) What is the best National Park to travel to?</dt>
+        <dd class="invisible">4.) Grand Canyon is a National Park Probably</dd>
+        <br>
+        <dt>5.) What do the Parks have to offer?</dt>
+        <dd class="invisible">5.) Google Yellowstone</dd>
+        <br>
+        <dt>6.) What do Park Rangers Do?</dt>
+        <dd class="invisible">6.) Park Rangers work at National Parks</dd>
+        <br>
+        <dt>7.) How many National Parks are there?</dt>
+        <dd class="invisible">7.) There over 5 National Parks</dd>
+        <br>
+        <dt>8.) What makes Yositmite a National Park</dt>
+        <dd class="invisible">8.) Yosimite Sam was based out of Yosimite.</dd>
+        <br>
+        <dt>9.) What is the combined total of square miles that the National Parks take up? </dt>
+        <dd class="invisible">9.) Fantastic question!</dd>
+        <br>
+        <dt>10.) How did you get this job promoting the National Parks?</dt>
+        <dd class="invisible">10.) My dad's a senator</dd>
+        <br>
+    </dl>
+    <a href="#" id="link">Toggle Answers</a>
+    <br><br>
+
+    <h3>Yosemite</h3>
+    <ul>
+        <li>It's Fresh</li>
+        <li>It's New</li>
+        <li>It's Bigger</li>
+        <li>It's Better Than Ever!</li>
+    </ul>
+    <h3>Grand Canyon</h3>
+    <ul>
+        <li>It's Big</li>
+        <li>It's a Hole</li>
+        <li>It took a team of 1000 construction specialist to dig</li>
+        <li>It's Grand</li>
+    </ul>
+    <h3>Washington Monument</h3>
+    <ul>
+        <li>It's Tall</li>
+        <li>It actually is a National Park technically</li>
+        <li>It was in Spider-man</li>
+        <li>It's Tall</li>
+    </ul>
+
+    <button id="btn">Yellow</button>
+    <br><br>
+
+    <div class="frame" id="frame1"><img height="200" width="200"  src="img/pitt.jpg" alt="dog"></div>
+    <div class="frame" id="frame2"><img height="200" width="200"  src="img/scooter.jpg" alt="scooter"></div>
+    <div class="frame" id="frame3"><img height="200" width="200"  src="img/laptops.jpg" alt="laptop"></div>
+    <br>
+
+        <button id="btn1" class="spacing">swap</button>
+        <button id="btn2" class="spacing">swap</button>
+        <button id="btn3" class="spacing">swap</button>
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+    (function () {
+        "use strict";
+        $(document).ready(function () {
+            $('#link').click(function() {
+                $( "dd" ).toggleClass('invisible');
+
+            });
+
+            $('dt').addClass('high-light');
+
+
+            $('.high-light').click(function(){
+                $(this).css('background-color', 'cyan');
+            });
+
+
+            $('#btn').click(function () {
+                $('ul').each(function () {
+                    $(this).children().last().css('background-color', 'yellow')
+                });
+            });
+
+            $('h3').click(function () {
+                $(this).next().children('li').css('font-weight', 'bold')
+            });
+
+            $('li').click(function () {
+                $(this).parent().children().first().css('color', 'blue')
+            });
+
+            //picture frame bonus
+
+            $('#btn1').click(function(){
+                $('#frame1').children('img').appendTo($("#frame2"));
+                $('#frame2').children('img').first().appendTo($("#frame1"));
+            });
+
+
+            $('#btn2').click(function () {
+                var leftOrRight = Math.floor(Math.random()* 2);
+                if( leftOrRight === 0){
+                    $('#frame2').children('img').appendTo($("#frame3"));
+                    $('#frame3').children('img').first().appendTo($("#frame2"));
+                }else{
+                    $('#frame2').children('img').appendTo($("#frame1"));
+                    $('#frame1').children('img').first().appendTo($("#frame2"));
+                }
+            });
+
+            $('#btn3').click(function () {
+                $('#frame3').children('img').appendTo($("#frame2"));
+                $('#frame2').children('img').first().appendTo($("#frame3"));
+            });
+        });
+
+
+
+
+
+    })();
+    </script>
+</body>
+</html>
