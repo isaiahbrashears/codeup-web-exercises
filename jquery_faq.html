@@ -18,13 +18,24 @@
             margin: 1em;
             float: left;
         }
+        .frame1{
+            height: 200px;
+            width: 200px;
+            border: 2em solid saddlebrown ;
+            margin: 1em;
+            float: left;
 
-        .spacing{
-            clear: top;
         }
+
+
     </style>
 </head>
 <body>
+    <div>
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span id="hideThisDiv">X</span>
+    </div>
+
     <h1>National Parks FAQs</h1>
 
     <dl>
@@ -89,13 +100,14 @@
 
     <div class="frame" id="frame1"><img height="200" width="200"  src="img/pitt.jpg" alt="dog"></div>
     <div class="frame" id="frame2"><img height="200" width="200"  src="img/scooter.jpg" alt="scooter"></div>
-    <div class="frame" id="frame3"><img height="200" width="200"  src="img/laptops.jpg" alt="laptop"></div>
+    <div class="frame1" id="frame3"><img height="200" width="200"  src="img/laptops.jpg" alt="laptop"></div>
     <br>
 
         <button id="btn1" class="spacing">swap</button>
         <button id="btn2" class="spacing">swap</button>
         <button id="btn3" class="spacing">swap</button>
 
+    <h2 id="register">Please register to the site</h2>
     <script src="js/jquery-2.2.4.js"></script>
     <script>
     (function () {
@@ -151,6 +163,23 @@
                 $('#frame3').children('img').appendTo($("#frame2"));
                 $('#frame2').children('img').first().appendTo($("#frame3"));
             });
+
+            $('#hideThisDiv').click(function(){
+                $(this).parent().hide();
+            });
+
+            $('ul').hide();
+
+            $('h3').click(function(){
+                $(this).next().slideToggle();
+            });
+
+            $('#register').hide();
+
+            setTimeout(function () {
+                $('#register').show();
+            },8000);
+
         });
 
 
