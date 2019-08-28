@@ -10,24 +10,45 @@
         .invisible{
             visibility: hidden;
         }
+        #grid{
+            margin: auto 0;
+            display: grid;
+            grid-template-rows: 1fr 8px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:
+                    ' pic1 pic2 pic3'
+                    'btn1 btn2 btn3';
+        }
 
         .frame{
             height: 200px;
             width: 200px;
             border: 2em solid saddlebrown ;
             margin: 1em;
-            float: left;
         }
-        .frame1{
-            height: 200px;
-            width: 200px;
-            border: 2em solid saddlebrown ;
-            margin: 1em;
-            float: left;
-
+        .spacing{
+            text-align: center;
+            margin: 0 5em auto;
         }
 
-
+        #frame1{
+            grid-area: pic1;
+        }
+        #frame2{
+            grid-area: pic2;
+        }
+        #frame3{
+            grid-area: pic3;
+        }
+        #btn1{
+            grid-area: btn1;
+        }
+        #btn2{
+            grid-area: btn2;
+        }
+        #btn3{
+            grid-area: btn3;
+        }
     </style>
 </head>
 <body>
@@ -97,16 +118,15 @@
 
     <button id="btn">Yellow</button>
     <br><br>
+    <div id="grid">
+        <div class="frame" id="frame1"><img height="200" width="200"  src="img/pitt.jpg" alt="dog"></div>
+        <div class="frame" id="frame2"><img height="200" width="200"  src="img/scooter.jpg" alt="scooter"></div>
+        <div class="frame" id="frame3"><img height="200" width="200"  src="img/laptops.jpg" alt="laptop"></div>
 
-    <div class="frame" id="frame1"><img height="200" width="200"  src="img/pitt.jpg" alt="dog"></div>
-    <div class="frame" id="frame2"><img height="200" width="200"  src="img/scooter.jpg" alt="scooter"></div>
-    <div class="frame1" id="frame3"><img height="200" width="200"  src="img/laptops.jpg" alt="laptop"></div>
-    <br>
-
-        <button id="btn1" class="spacing">swap</button>
-        <button id="btn2" class="spacing">swap</button>
-        <button id="btn3" class="spacing">swap</button>
-
+            <button id="btn1" class="spacing">swap</button>
+            <button id="btn2" class="spacing">swap</button>
+            <button id="btn3" class="spacing">swap</button>
+    </div>
     <h2 id="register">Please register to the site</h2>
     <script src="js/jquery-2.2.4.js"></script>
     <script>
@@ -181,10 +201,6 @@
             },8000);
 
         });
-
-
-
-
 
     })();
     </script>
