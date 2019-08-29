@@ -1,0 +1,21 @@
+body{
+    padding: 1.5em;
+    background-color: lightsteelblue;
+}
+h3{
+    color: #cf8f97;
+}
+p{
+    padding: .8em;
+    color:#6e6b6f;
+    background-color: #bfa499 ;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(110,107,111,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(110,107,111,1);
+    box-shadow: 10px 10px 5px 0px rgba(110,107,111,1);
+}
+small{
+    color: #9e9984;
+}
+.hidden{
+    display: none;
+}
