@@ -11,6 +11,10 @@
 
 </head>
 <body>
+<div id="title">
+    <h1>Ants on a Blog</h1>
+    <h3>Anthony's Blog</h3>
+</div>
 <div id="posts"></div>
 
 
@@ -29,7 +33,7 @@
                '<br> <div>' +
                     '<h3>' + post.title + '</h3>' +
                     '<p>'+ post.content +'</p>' +
-                    '<small>' + post.date +  '<br>' + ' <span class="catTags">Tags: </span>   ' + '<span class="hidden" >' + cats +'</span>'  + '</small>' +
+                    '<small>' + post.date +  '<br>' + ' <a class="catTags">Tags: </a> ' + '<span class="hidden" >' + cats +'</span>'  + '</small>' +
                 '</div> <hr>'
             )
         })

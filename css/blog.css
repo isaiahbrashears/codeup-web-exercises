@@ -1,6 +1,8 @@
 body{
-    padding: 1.5em;
+
     background-color: lightsteelblue;
+    width: 75%;
+    margin: 0 auto;
 }
 h3{
     color: #cf8f97;
@@ -14,8 +16,15 @@ p{
     box-shadow: 10px 10px 5px 0px rgba(110,107,111,1);
 }
 small{
-    color: #9e9984;
+    color: #6e6b6f;
 }
 .hidden{
     display: none;
+}
+#title{
+    text-align: center;
+    color:#6e6b6f;
+}
+#title h3{
+    color:#6e6b6f;
 }
