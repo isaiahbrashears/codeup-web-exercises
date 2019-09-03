@@ -8,9 +8,11 @@
 
 .card{
     text-align: center;
+    margin-top: 1em;
 }
 .card-body{
     height: 15em;
+
 }
 .form-control{
     width: 80%;
@@ -20,6 +22,8 @@
     width: 80%;
     margin: 0 auto;
     margin-bottom: 1em;
+    height: 275px;
+    background-color: #3B94D9;
 }
 ul{
     list-style-type: none;
@@ -30,13 +34,62 @@ ul{
     margin: 0 auto;
     margin-bottom: .5em;
     margin-top: .5em;
+    color: #3484D9;
+    font-family: 'Roboto', sans-serif;
 }
 
-h1{
-    text-align: center;
+header{
+    display: flex;
     color: whitesmoke;
     background-color: #3B94D9;
-    height: 1.6em;
-    line-height: 122px;
-    font-size: 5em;
+    height: 7em;
+    margin: 0 auto;
+    font-family: 'Baloo Paaji', cursive;
+
+}
+header .heading{
+    position: absolute;
+    left: calc(50% + (-334.97px));
+    line-height: 110px;
+    font-size: 5.2em;
+}
+
+header #date{
+    padding: 2em;
+    line-height: 3.5em;
+    margin-rigth: auto;
+    font-size: 1.3em;
+}
+
+header #time{
+    padding: 2em;
+    line-height: 3.5em;
+    margin-left: auto;
+    font-size: 1.3em;
+}
+
+.nightmode{
+    background-color: #444;
+}
+
+.nightmode header{
+    background: #202020;
+}
+
+.nightmode #city{
+    color: whitesmoke;
+}
+
+.nightmode #threeDayForecast{
+    background-color: #202020;
+}
+
+.nightmode .card-body{
+    background-color: #848487;
+    border-color: #202020;
+}
+
+.nightmode #search, select, textarea{
+    background-color: #848487;
+    color: whitesmoke;
 }
