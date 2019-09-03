@@ -1,34 +1,58 @@
 
 #map {
     /* the width and height may be set to any size */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#mapContainer{
     width: 80%;
     height: 300px;
     margin: 0 auto;
+    background-color: #3B94D9;
+    padding: 1em;
+
 }
 
 .card{
     text-align: center;
     margin-top: 1em;
 }
+
 .card-body{
     height: 15em;
 
 }
+
 .form-control{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
+
+#searchContainer{
+    width: 80%;
+    height: 3.4em;
+    margin: 0 auto;
+    background-color: #3B94D9;
+    padding: .5em;
+    margin-top: .2em;
+}
+
+
 #threeDayForecast{
     width: 80%;
     margin: 0 auto;
-    margin-bottom: 1em;
+    margin-bottom: .2em;
     height: 275px;
     background-color: #3B94D9;
 }
+
 ul{
     list-style-type: none;
     padding-left: 0;
 }
+
 #city{
     width: 80%;
     margin: 0 auto;
@@ -92,4 +116,12 @@ header #time{
 .nightmode #search, select, textarea{
     background-color: #848487;
     color: whitesmoke;
+}
+
+.nightmode #mapContainer{
+    background-color: #202020;
+}
+
+.nightmode #searchContainer{
+    background-color: #202020;
 }
