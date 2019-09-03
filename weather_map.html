@@ -25,10 +25,15 @@
 <script src="js/keys.js"></script>
 <script src="js/mapbox-utils.js"></script>
 <script>
-    "use strict";
+"use strict";
+(function () {
+
+
+
     var weatherLocation = '29.4241, -98.4936';
 
     //STARTS MAP AT SAN ANTONIO
+
     mapboxgl.accessToken = mapboxToken;
     var map = new mapboxgl.Map({
         container: 'map',
@@ -38,6 +43,8 @@
 
     });
 
+    //STARTS MARKER AT SAN ANTONIO
+
     var marker = new mapboxgl.Marker({
         draggable: true
     })
@@ -45,19 +52,18 @@
         .addTo(map);
 
 
-
-    //STARTING POINT
+    //STARTS WEATHER FORECAST AT SAN ANTONIO
 
     $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey + '/'+ weatherLocation).done(function (data) {
 
         $('#threeDayForecast').html('');
+
         //THREE DAY FORECAST
 
         for (var i = 0; i < 3; i++){
             var day = data.daily.data[i];
 
             //DECIDES WHAT ICON TO USE
-
 
             function whatIcon(day){
                 var iconToUse;
@@ -89,26 +95,21 @@
 
             var icon = whatIcon(day);
 
-
             //UPDATES HTML WITH THREE DAY FORECAST
 
             $('#threeDayForecast').append(
                 '<div class="col-sm-4">' +
                 '   <div class="card">' +
-                '   <div class="card-body">' +
-                '  <h5 class="card-title">'+ day.apparentTemperatureHigh.toFixed(0)+ '°' +  '/' + day.apparentTemperatureLow.toFixed(0)+ '°' +'</h5>' +
-                '<span>'+ icon +'</span>' +
-                '<ul> <li>' +'Humidity: '+ day.humidity +'</li>' + '<li>'+ 'Wind: ' + day.windGust + '</li>'+ '<li>' +'Pressure: ' +day.pressure + '</li> </ul>'+
-                '</div>' +
-                '</div>' +
+                '       <div class="card-body">' +
+                '           <h5 class="card-title">'+ day.apparentTemperatureHigh.toFixed(0)+ '°' +  '/' + day.apparentTemperatureLow.toFixed(0)+ '°' +'</h5>' +
+                '           <span>'+ icon +'</span>' +
+                '           <ul> <li>' +'Humidity: '+ day.humidity +'</li>' + '<li>'+ 'Wind: ' + day.windGust + '</li>'+ '<li>' +'Pressure: ' +day.pressure + '</li> </ul>'+
+                '       </div>' +
+                '   </div>' +
                 '</div>'
             );
-
-
         }
-        console.log(data)
     });
-
 
     //CHANGES WHEN MARKER MOVES
 
@@ -124,6 +125,7 @@
         $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey + '/'+ weatherLocation).done(function (data) {
 
             $('#threeDayForecast').html('');
+
             //THREE DAY FORECAST
 
             for (var i = 0; i < 3; i++){
@@ -162,30 +164,24 @@
 
                 var icon = whatIcon(day);
 
-
                 //UPDATES HTML WITH THREE DAY FORECAST
 
                 $('#threeDayForecast').append(
                     '<div class="col-sm-4">' +
                     '   <div class="card">' +
-                    '   <div class="card-body">' +
-                    '  <h5 class="card-title">'+ day.apparentTemperatureHigh.toFixed(0)+ '°' +  '/' + day.apparentTemperatureLow.toFixed(0)+ '°' +'</h5>' +
-                    '<span>'+ icon +'</span>' +
-                    '<ul> <li>' +'Humidity: '+ day.humidity +'</li>' + '<li>'+ 'Wind: ' + day.windGust + '</li>'+ '<li>' +'Pressure: ' +day.pressure + '</li> </ul>'+
-                    '</div>' +
-                    '</div>' +
+                    '       <div class="card-body">' +
+                    '           <h5 class="card-title">'+ day.apparentTemperatureHigh.toFixed(0)+ '°' +  '/' + day.apparentTemperatureLow.toFixed(0)+ '°' +'</h5>' +
+                    '           <span>'+ icon +'</span>' +
+                    '           <ul> <li>' +'Humidity: '+ day.humidity +'</li>' + '<li>'+ 'Wind: ' + day.windGust + '</li>'+ '<li>' +'Pressure: ' +day.pressure + '</li> </ul>'+
+                    '       </div>' +
+                    '   </div>' +
                     '</div>'
                 );
-
-
             }
-
         });
-
     }
 
     marker.on('dragend', onDragEnd);
-
 
     //UPDATES MAP AND CITY NAME BY SEARCHING
 
@@ -193,15 +189,15 @@
         if(e.which === 13){
             var location = $('#search').val();
             geocode(location , mapboxToken).then(function (result) {
-                map.jumpTo({ center:result});
+                map.flyTo({ center:result});
                 $('#city').html(location.toUpperCase());
-                var markerLocation = result;
-                marker.setLngLat(markerLocation);
+                marker.setLngLat(result);
                 weatherLocation = result.reverse().join(',');
 
                 $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey + '/'+ weatherLocation).done(function (data) {
 
                     $('#threeDayForecast').html('');
+
                     //THREE DAY FORECAST
 
                     for (var i = 0; i < 3; i++){
@@ -240,7 +236,6 @@
 
                         var icon = whatIcon(day);
 
-
                         //UPDATES HTML WITH THREE DAY FORECAST
 
                         $('#threeDayForecast').append(
@@ -249,9 +244,9 @@
                             '       <div class="card-body">' +
                             '           <h5 class="card-title">'+ day.apparentTemperatureHigh.toFixed(0)+ '°' +  '/' + day.apparentTemperatureLow.toFixed(0)+ '°' +'</h5>' +
                             '           <span>'+ icon +'</span>' +
-                            '<ul> <li>' +'Humidity: '+ day.humidity +'</li>' + '<li>'+ 'Wind: ' + day.windGust + '</li>'+ '<li>' +'Pressure: ' +day.pressure + '</li> </ul>'+
-                            '</div>' +
-                            '</div>' +
+                            '           <ul> <li>' +'Humidity: '+ day.humidity +'</li>' + '<li>'+ 'Wind: ' + day.windGust + '</li>'+ '<li>' +'Pressure: ' +day.pressure + '</li> </ul>'+
+                            '       </div>' +
+                            '   </div>' +
                             '</div>'
                         );
                     }
@@ -260,7 +255,7 @@
         }
     });
 
-
+})();
 
 </script>
 

@@ -9,6 +9,9 @@
 .card{
     text-align: center;
 }
+.card-body{
+    height: 15em;
+}
 .form-control{
     width: 80%;
     margin: 0 auto;
@@ -20,9 +23,20 @@
 }
 ul{
     list-style-type: none;
+    padding-left: 0;
 }
 #city{
     width: 80%;
     margin: 0 auto;
     margin-bottom: .5em;
+    margin-top: .5em;
+}
+
+h1{
+    text-align: center;
+    color: whitesmoke;
+    background-color: #3B94D9;
+    height: 1.6em;
+    line-height: 122px;
+    font-size: 5em;
 }
