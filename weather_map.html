@@ -26,7 +26,7 @@
 <script src="js/mapbox-utils.js"></script>
 <script>
     "use strict";
-
+    var weatherLocation = '29.4241, -98.4936';
 
     //STARTS MAP AT SAN ANTONIO
     mapboxgl.accessToken = mapboxToken;
@@ -44,24 +44,9 @@
         .setLngLat([-98.4936, 29.4241])
         .addTo(map);
 
-    function onDragEnd() {
-        return marker.getLngLat();
 
 
-    }
-    var coordinates = onDragEnd();
-
-    console.log(coordinates);
-
-    marker.on('dragend', onDragEnd);
-
-    var latitude = coordinates.lat;
-
-    var longitude = coordinates.lng;
-
-    var weatherLocation = latitude + ',' + longitude;
-
-
+    //STARTING POINT
 
     $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey + '/'+ weatherLocation).done(function (data) {
 
@@ -113,7 +98,7 @@
                 '   <div class="card-body">' +
                 '  <h5 class="card-title">'+ day.apparentTemperatureHigh.toFixed(0)+ '°' +  '/' + day.apparentTemperatureLow.toFixed(0)+ '°' +'</h5>' +
                 '<span>'+ icon +'</span>' +
-                    '<ul> <li>' +'Humidity: '+ day.humidity +'</li>' + '<li>'+ 'Wind: ' + day.windGust + '</li>'+ '<li>' +'Pressure: ' +day.pressure + '</li> </ul>'+
+                '<ul> <li>' +'Humidity: '+ day.humidity +'</li>' + '<li>'+ 'Wind: ' + day.windGust + '</li>'+ '<li>' +'Pressure: ' +day.pressure + '</li> </ul>'+
                 '</div>' +
                 '</div>' +
                 '</div>'
@@ -125,18 +110,94 @@
     });
 
 
-    //UPDATES MAP AND CITY NAME
+    //CHANGES WHEN MARKER MOVES
+
+    function onDragEnd() {
+        var coordinates = marker.getLngLat();
+
+        var latitude = coordinates.lat;
+
+        var longitude = coordinates.lng;
+
+        var weatherLocation = latitude + ',' + longitude;
+
+        $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey + '/'+ weatherLocation).done(function (data) {
+
+            $('#threeDayForecast').html('');
+            //THREE DAY FORECAST
+
+            for (var i = 0; i < 3; i++){
+                var day = data.daily.data[i];
+
+                //DECIDES WHAT ICON TO USE
+
+
+                function whatIcon(day){
+                    var iconToUse;
+                    if (day.icon === 'clear-day'){
+                        iconToUse = '<img src="icon/sunny.png" height="100" width="100"/>'
+
+                    } else if(day.icon === 'clear-night'){
+                        iconToUse = '<img src="icon/moon.png" height="100" width="100"/>'
+                    }else if(day.icon === 'partly-cloudy-day'){
+                        iconToUse = '<img src="icon/partly-cloudy-day.png" height="100" width="100"/>'
+                    }else if(day.icon === 'partly-cloudy-night'){
+                        iconToUse = '<img src="icon/partly-cloudy-night.png" height="100" width="100"/>'
+                    }else if (day.icon === 'cloudy'){
+                        iconToUse = '<img src="icon/cloudy.png" height="100" width="100"/>'
+                    }else if (day.icon === 'rain'){
+                        iconToUse = '<img src="icon/rain.png" height="100" width="100"/>'
+                    }else if (day.icon === 'sleet'){
+                        iconToUse = '<img src="icon/sleet.png" height="100" width="100"/>'
+                    }else if (day.icon === 'snow'){
+                        iconToUse = '<img src="icon/snow.png" height="100" width="100"/>'
+                    }else if (day.icon === 'wind'){
+                        iconToUse = '<img src="icon/wind.png" height="100" width="100"/>'
+                    }else if (day.icon === 'fog'){
+                        iconToUse = '<img src="icon/fog.png" height="100" width="100"/>'
+                    }
+
+                    return iconToUse;
+                }
+
+                var icon = whatIcon(day);
+
+
+                //UPDATES HTML WITH THREE DAY FORECAST
+
+                $('#threeDayForecast').append(
+                    '<div class="col-sm-4">' +
+                    '   <div class="card">' +
+                    '   <div class="card-body">' +
+                    '  <h5 class="card-title">'+ day.apparentTemperatureHigh.toFixed(0)+ '°' +  '/' + day.apparentTemperatureLow.toFixed(0)+ '°' +'</h5>' +
+                    '<span>'+ icon +'</span>' +
+                    '<ul> <li>' +'Humidity: '+ day.humidity +'</li>' + '<li>'+ 'Wind: ' + day.windGust + '</li>'+ '<li>' +'Pressure: ' +day.pressure + '</li> </ul>'+
+                    '</div>' +
+                    '</div>' +
+                    '</div>'
+                );
+
+
+            }
+
+        });
+
+    }
+
+    marker.on('dragend', onDragEnd);
+
+
+    //UPDATES MAP AND CITY NAME BY SEARCHING
 
     $('#search').keyup(function (e) {
         if(e.which === 13){
-            var location = $('#search').val()
+            var location = $('#search').val();
             geocode(location , mapboxToken).then(function (result) {
                 map.jumpTo({ center:result});
                 $('#city').html(location.toUpperCase());
-                console.log(result);
-                var rearangeLatAndLong = result.reverse().join(',');
-                weatherLocation = rearangeLatAndLong;
-                console.log(weatherLocation);
+                var markerLocation = result;
+                marker.setLngLat(markerLocation);
+                weatherLocation = result.reverse().join(',');
 
                 $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+ darkSkyKey + '/'+ weatherLocation).done(function (data) {
 
@@ -185,18 +246,15 @@
                         $('#threeDayForecast').append(
                             '<div class="col-sm-4">' +
                             '   <div class="card">' +
-                            '   <div class="card-body">' +
-                            '  <h5 class="card-title">'+ day.apparentTemperatureHigh.toFixed(0)+ '°' +  '/' + day.apparentTemperatureLow.toFixed(0)+ '°' +'</h5>' +
-                            '<span>'+ icon +'</span>' +
+                            '       <div class="card-body">' +
+                            '           <h5 class="card-title">'+ day.apparentTemperatureHigh.toFixed(0)+ '°' +  '/' + day.apparentTemperatureLow.toFixed(0)+ '°' +'</h5>' +
+                            '           <span>'+ icon +'</span>' +
                             '<ul> <li>' +'Humidity: '+ day.humidity +'</li>' + '<li>'+ 'Wind: ' + day.windGust + '</li>'+ '<li>' +'Pressure: ' +day.pressure + '</li> </ul>'+
                             '</div>' +
                             '</div>' +
                             '</div>'
                         );
-
-
                     }
-                    console.log(data)
                 });
             });
         }
