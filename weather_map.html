@@ -219,8 +219,8 @@
 
     document.getElementById('geocoder').append(geocoder.onAdd(map));
 
-    $('#geocoder').keyup(function (e) {
-        if(e.which === 13){
+    $('#geocoder').change(function (e) {
+        // if(e.which === 13){
             geocoder.mapMarker.remove();
             var location = geocoder.inputString;
             console.log(geocoder);
@@ -287,7 +287,7 @@
                     }
                 });
             });
-        }
+        // }
     });
 
 })();
