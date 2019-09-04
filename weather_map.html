@@ -22,13 +22,16 @@
 <div id="threeDayForecast" class="row"></div>
 <div id="mapContainer">
     <div id="map"></div>
+
 </div>
 <div id="searchContainer">
-    <input class="form-control" id="search" type="text" placeholder="Enter City Here">
+    <div id='geocoder' class='geocoder this' ></div>
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-utils.js"></script>
 <script>
@@ -46,6 +49,8 @@
         center: [-98.4936, 29.4241]
 
     });
+
+
 
     //DATE AND TIME
 
@@ -140,7 +145,6 @@
         var latitude = coordinates.lat;
         var longitude = coordinates.lng;
         var weatherLocation = latitude + ',' + longitude;
-        console.log(coordinates);
 
         reverseGeocode(coordinates , mapboxToken).then(function (result) {
             $('#city').html(result.toUpperCase());
@@ -207,10 +211,19 @@
 
     //UPDATES MAP AND CITY NAME BY SEARCHING
 
-    $('#search').keyup(function (e) {
+    var geocoder = new MapboxGeocoder({
+        accessToken: mapboxToken,
+        mapboxgl: mapboxgl,
+        mapMarker: null
+    });
+
+    document.getElementById('geocoder').append(geocoder.onAdd(map));
+
+    $('#geocoder').keyup(function (e) {
         if(e.which === 13){
-            var location = $('#search').val();
-            console.log(location);
+            geocoder.mapMarker.remove();
+            var location = geocoder.inputString;
+            console.log(geocoder);
             geocode(location , mapboxToken).then(function (result) {
                 map.flyTo({ center:result});
                 $('#city').html(location.toUpperCase());
