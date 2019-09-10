@@ -36,11 +36,11 @@ function getLastPush(name){
 
     return new Promise(function (resolve) {
         fetch(`https://api.github.com/users/${username}/events/public`, {headers: {'Authorization': `token ${gitHubKey}` }})
-            .then(function (res) {return res.json();})
-            .then((data)=> {return  filterData(data)})
-            .then(function (data) {resolve (data[0].created_at);})
+            .then((res) =>  res.json())
+            .then((data) =>  filterData(data))
+            .then((data) =>  resolve (data[0].created_at))
     });
 }
 
-const filterData = data => data.filter(d => d.type === "PushEvent");
+const filterData = (data) => data.filter((d) => d.type === "PushEvent");
 getLastPush('isaiahbrashears').then((message) => console.log(message));
