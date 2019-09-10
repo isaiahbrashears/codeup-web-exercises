@@ -32,18 +32,15 @@ wait(3000).then((message) => console.log(message))
 
 function getLastPush(name){
 
-let username = name;
+    let username = name;
 
-return new Promise(function (resolve) {
-    fetch(`https://api.github.com/users/${username}/events/public`, {headers: {'Authorization': `token ${gitHubKey}` }})
-        .then(function (res) {
-            return res.json();
-        }).then(function (data) {
-            resolve (data[0].created_at);
-    }).catch(function (err) {
-        console.log('error')
+    return new Promise(function (resolve) {
+        fetch(`https://api.github.com/users/${username}/events/public`, {headers: {'Authorization': `token ${gitHubKey}` }})
+            .then(function (res) {return res.json();})
+            .then((data)=> {return  filterData(data)})
+            .then(function (data) {resolve (data[0].created_at);})
     });
-})
 }
 
+const filterData = data => data.filter(d => d.type === "PushEvent");
 getLastPush('isaiahbrashears').then((message) => console.log(message));
