@@ -42,3 +42,4 @@ function getLastPush(name){
 
 const filterData = (data) => data.filter((d) => d.type === "PushEvent");
 getLastPush('isaiahbrashears').then((message) => console.log(message));
+

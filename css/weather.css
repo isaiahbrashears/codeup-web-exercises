@@ -140,3 +140,29 @@ header #time{
 .nightmode #searchContainer{
     background-color: #202020;
 }
+
+@media screen and (max-width:1021px) {
+
+
+    header .heading{
+        position: absolute;
+        left: calc(50% + (-184.25px));
+        line-height: 110px;
+        font-size: 3em;
+    }
+
+    header #date{
+        padding: 2em;
+        line-height: 5.5em;
+        margin-rigth: auto;
+        font-size: 1.3em;
+    }
+
+    header #time{
+        padding: 2em;
+        line-height: 5.5em;
+        margin-left: auto;
+        font-size: 1.3em;
+    }
+
+  }
