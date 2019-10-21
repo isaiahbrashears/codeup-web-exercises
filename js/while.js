@@ -8,7 +8,6 @@ while (x <= 65536) {
     x *= 2;
 }
 
-
 var allCones = Math.floor(Math.random() * 50) + 50;
 // This expression will generate a random number between 1 and 5
 
