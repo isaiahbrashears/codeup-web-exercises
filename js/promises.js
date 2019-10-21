@@ -22,14 +22,6 @@ wait(3000).then((message) => console.log(message))
     .catch((err) => console.log(err));
 
 
-// fetch('https://swapi.co/api/people/1/').then(function (res) {
-//     return res.json();
-// }).then(function (data) {
-//     console.log(data);
-// }).catch(function (err) {
-//     console.log('error');
-// });
-
 function getLastPush(name){
     return new Promise(function (resolve) {
         fetch(`https://api.github.com/users/${name}/events/public`, {headers: {'Authorization': `token ${gitHubKey}` }})
