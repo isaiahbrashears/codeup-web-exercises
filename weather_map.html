@@ -90,6 +90,12 @@
           for (var i = 0; i < 3; i++) {
               var day = data.daily.data[i];
 
+              var dateObject = new Date((day.time) * 1000);
+
+              dateObject = dateObject.toDateString();
+
+              dateObject = dateObject.slice(0, 10);
+
               //DECIDES WHAT ICON TO USE
 
               function whatIcon(day) {
@@ -127,7 +133,7 @@
                   '<div class="col-sm-4">' +
                   '   <div class="card">' +
                   '       <div class="card-body">' +
-                  '           <h5 class="card-title">' + day.apparentTemperatureHigh.toFixed(0) + '°' + '/' + day.apparentTemperatureLow.toFixed(0) + '°' + '</h5>' +
+                  '           <h5 class="card-title">'+ dateObject +  `<br>`+ day.apparentTemperatureHigh.toFixed(0) + '°' + '/' + day.apparentTemperatureLow.toFixed(0) + '°' + '</h5>' +
                   '           <span>' + icon + '</span>' +
                   '           <ul>' +
                   '              <li>' + 'Humidity: ' + day.humidity + '</li>' +

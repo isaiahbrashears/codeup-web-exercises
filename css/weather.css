@@ -36,7 +36,7 @@
 }
 
 .card-body{
-    height: 15em;
+    height: 18em;
 
 }
 
@@ -59,7 +59,7 @@
     width: 80%;
     margin: 0 auto;
     margin-bottom: .2em;
-    height: 275px;
+    height: 320px;
     background-color: #3B94D9;
 }
 
@@ -165,4 +165,23 @@ header #time{
         font-size: 1.3em;
     }
 
+
   }
+
+@media screen and (max-width:574px){
+    #threeDayForecast .col-sm-4:nth-of-type(2){
+        display: none;
+    }
+
+    #threeDayForecast .col-sm-4:nth-of-type(3){
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:430px){
+   .heading{
+       display: none;
+   }
+
+}
