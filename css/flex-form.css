@@ -52,17 +52,12 @@ body {
     color: white;
 }
 
-
 /*flex solution*/
 .cover {
     /* flex container */
     display: flex;
-
-
-
-
-
 }
+
 .flex-form {
     /* flex items */
     margin: auto;
