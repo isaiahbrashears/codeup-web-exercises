@@ -3,3 +3,4 @@
 secret.txt
 bonus-practice/*
 keys.js
+*.DS_Store
